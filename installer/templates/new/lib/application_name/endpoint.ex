@@ -26,8 +26,8 @@ defmodule <%= application_module %>.Endpoint do
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
     json_decoder: Poison
-
-  plug Plug.MethodOverride
+<%= if html do %>
+  plug Plug.MethodOverride<% end %>
   plug Plug.Head
 
   # The session will be stored in the cookie and signed,
